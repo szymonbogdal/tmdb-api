@@ -9,12 +9,17 @@ class Genre extends Model
 {
     use HasTranslations;
 
-    protected $fillable = ['tmdb_id', 'name', 'overview', 'first_air_date', 'poster_path'];
+    protected $fillable = ['tmdb_id', 'name'];
 
-    public $translatable = ['name', 'overview'];
+    public $translatable = ['name'];
 
-    public function genres()
+    public function movies()
     {
-        return $this->belongsToMany(Genre::class);
+        return $this->belongsToMany(Movie::class);
+    }
+
+    public function series()
+    {
+        return $this->belongsToMany(Serie::class);
     }
 }
