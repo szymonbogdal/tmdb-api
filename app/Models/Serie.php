@@ -8,17 +8,12 @@ use Spatie\Translatable\HasTranslations;
 class Serie extends Model
 {
     use HasTranslations;
-    protected $fillable = ['tmdb_id', 'name'];
+    protected $fillable = ['tmdb_id', 'name', 'overview'];
 
-    public $translatable = ['name'];
+    public $translatable = ['name', 'overview'];
 
-    public function movies()
+    public function genres()
     {
-        return $this->belongsToMany(Movie::class);
-    }
-
-    public function series()
-    {
-        return $this->belongsToMany(Serie::class);
+        return $this->belongsToMany(Genre::class);
     }
 }
