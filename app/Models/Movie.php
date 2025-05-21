@@ -9,7 +9,7 @@ class Movie extends Model
 {
     use HasTranslations;
 
-    protected $fillable = ['tmdb_id', 'title', 'overview', 'release_date', 'poster_path'];
+    protected $fillable = ['tmdb_id', 'title', 'overview'];
 
     public $translatable = ['title', 'overview'];
 
