@@ -7,10 +7,6 @@ use App\Http\Controllers\Api\SerieController;
 use App\Http\Controllers\Api\GenreController;
 use App\Http\Middleware\SetLocale;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
-
 Route::middleware(SetLocale::class)->group(function () {
     Route::get('/movies', [MovieController::class, 'index']);
     Route::get('/movies/{id}', [MovieController::class, 'show']);
